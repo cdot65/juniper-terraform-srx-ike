@@ -16,7 +16,7 @@ resource "junos-ike_SecurityIkeGatewayName" "ike_gateway_name" {
 resource "junos-ike_SecurityIkeGatewayAddress" "ike_gateway_address" {
   resource_name = var.ike_apply_group_name
   name          = var.ike_gateway_name
-  address       = "10.1.1.1"
+  address       = "10.1.1.2"
 }
 
 resource "junos-ike_SecurityIkeGatewayIke__Policy" "ike_gateway_policy" {
