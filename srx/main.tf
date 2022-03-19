@@ -82,7 +82,7 @@ resource "junos-ike_SecurityIkePolicyName" "ike_policy_name" {
 resource "junos-ike_SecurityIkePolicyDescription" "ike_policy_description" {
   resource_name = var.ike_apply_group_name
   name          = var.ike_policy_name
-  description   = "This is a description for an IKE policy"
+  description   = "This is an IKE policy description"
 }
 
 resource "junos-ike_SecurityIkePolicyMode" "ike_policy_mode" {
