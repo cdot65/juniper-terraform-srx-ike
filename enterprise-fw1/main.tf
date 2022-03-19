@@ -28,7 +28,7 @@ resource "junos-ike_SecurityIkeGatewayIke__Policy" "ike_gateway_policy" {
 resource "junos-ike_SecurityIkeGatewayExternal__Interface" "ike_gateway_ext_iface" {
   resource_name       = var.ike_apply_group_name
   name                = var.ike_gateway_name
-  external__interface = "ge-0/0/0.0"
+  external__interface = "ge-0/0/1.0"
 }
 
 // IKE proposals
