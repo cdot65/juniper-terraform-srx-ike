@@ -1,0 +1,6 @@
+.terraform.lock.hcl
+enterprise.tfplan
+terraform.tfstate
+.terraform/modules/modules.json
+.terraform/providers/registry.terraform.io/cdot65/junos-ike/0.0.1/linux_amd64/terraform-provider-junos-ike_v0.0.1
+.terraform/providers/registry.terraform.io/cdot65/junos-ike/0.0.1/linux_amd64/README.md
