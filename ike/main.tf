@@ -16,7 +16,7 @@ resource "junos-ike_SecurityIkeGatewayName" "ike_gateway_name" {
 resource "junos-ike_SecurityIkeGatewayAddress" "ike_gateway_address" {
   resource_name = var.ike_apply_group_name
   name          = var.ike_gateway_name
-  address       = "10.1.1.1"
+  address       = "56.0.0.1"
 }
 
 resource "junos-ike_SecurityIkeGatewayIke__Policy" "ike_gateway_policy" {
@@ -28,7 +28,7 @@ resource "junos-ike_SecurityIkeGatewayIke__Policy" "ike_gateway_policy" {
 resource "junos-ike_SecurityIkeGatewayExternal__Interface" "ike_gateway_ext_iface" {
   resource_name       = var.ike_apply_group_name
   name                = var.ike_gateway_name
-  external__interface = "ge-0/0/1.0"
+  external__interface = "ge-0/0/0.0"
 }
 
 // IKE proposals
@@ -40,7 +40,7 @@ resource "junos-ike_SecurityIkeProposalName" "ike_proposal_name" {
 resource "junos-ike_SecurityIkeProposalAuthentication__Algorithm" "ike_proposal_auth_alg" {
   resource_name             = var.ike_apply_group_name
   name                      = var.ike_proposal_name
-  authentication__algorithm = "sha1"
+  authentication__algorithm = "sha-256"
 }
 
 resource "junos-ike_SecurityIkeProposalAuthentication__Method" "ike_proposal_auth_method" {
@@ -52,19 +52,19 @@ resource "junos-ike_SecurityIkeProposalAuthentication__Method" "ike_proposal_aut
 resource "junos-ike_SecurityIkeProposalDescription" "ike_proposal_description" {
   resource_name = var.ike_apply_group_name
   name          = var.ike_proposal_name
-  description   = "This is an IKE proposal"
+  description   = "DH14-aes-128-sha-256"
 }
 
 resource "junos-ike_SecurityIkeProposalDh__Group" "ike_proposal_dhgroup" {
   resource_name = var.ike_apply_group_name
   name          = var.ike_proposal_name
-  dh__group     = "group1"
+  dh__group     = "group14"
 }
 
 resource "junos-ike_SecurityIkeProposalEncryption__Algorithm" "ike_proposal_enc_alg" {
   resource_name         = var.ike_apply_group_name
   name                  = var.ike_proposal_name
-  encryption__algorithm = "3des-cbc"
+  encryption__algorithm = "aes-128-cbc"
 }
 
 resource "junos-ike_SecurityIkeProposalLifetime__Seconds" "ike_proposal_lifetime" {

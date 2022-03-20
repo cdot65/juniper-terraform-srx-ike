@@ -15,15 +15,15 @@ provider "junos-ike" {
   password = var.juniper_user_password
 }
 
-module "srx" {
-  source     = "./srx"
+module "ike" {
+  source     = "./ike"
   providers  = { junos-ike = junos-ike }
   depends_on = [junos-ike_destroycommit.commit-main]
 }
 
 resource "junos-ike_commit" "commit-main" {
   resource_name = "commit"
-  depends_on    = [module.srx]
+  depends_on    = [module.ike]
 }
 
 resource "junos-ike_destroycommit" "commit-main" {
